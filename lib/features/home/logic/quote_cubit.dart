@@ -18,9 +18,9 @@ class QuoteCubit extends Cubit<QuoteState> {
       final quote = await homeRepo.getRandomQuote();
       emit(QuoteLoaded(quote));
     } on DioException {
-      emit(QuoteError('there is a problem with the network or server.'));
+      emit(QuoteError("there is a problem with the network or the server."));
     } catch (_) {
-      emit(QuoteError('there is a problem with the network or server.'));
+      emit(QuoteError('there is a problem.'));
     }
   }
 }
