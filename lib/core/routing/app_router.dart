@@ -14,7 +14,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) =>
             BlocProvider(
               create: (context) =>
-                  QuoteCubit(HomeRepo(webServices: Webservices(Dio()))),
+              QuoteCubit(HomeRepo(webServices: Webservices(Dio())))
+                ..getRandomQuote(),
               child: HomeScreen(),
             ));
       default:
