@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quotely/core/constants/app_constants.dart';
+import 'package:quotely/core/theming/app_colors.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -7,10 +7,13 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(AppConstants.appName),
-        centerTitle: true,
-      ),
+      backgroundColor: AppColors.background,
+      body:  SafeArea(child:
+      Column(
+        children: [
+
+        ],
+      )),
     );
   }
 }
