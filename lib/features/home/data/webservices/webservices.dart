@@ -13,5 +13,6 @@ abstract class Webservices {
   @GET(ApiConstants.randomQuote)
   Future<List<QuoteModel>> getRandomQuote(
       @Header("X-Api-Key") String apiKey,
+      @Query("t") String timestamp,
       );
 }

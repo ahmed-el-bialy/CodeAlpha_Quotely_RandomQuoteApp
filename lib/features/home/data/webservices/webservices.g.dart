@@ -22,9 +22,12 @@ class _Webservices implements Webservices {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<QuoteModel>> getRandomQuote(String apiKey) async {
+  Future<List<QuoteModel>> getRandomQuote(
+    String apiKey,
+    String timestamp,
+  ) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r't': timestamp};
     final _headers = <String, dynamic>{r'X-Api-Key': apiKey};
     _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
