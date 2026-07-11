@@ -6,10 +6,12 @@ import '../models/quote_model.dart';
 
 part 'webservices.g.dart';
 
-@RestApi()
+@RestApi(baseUrl: ApiConstants.baseUrl)
 abstract class Webservices {
   factory Webservices(Dio dio, {String? baseUrl}) = _Webservices;
 
   @GET(ApiConstants.randomQuote)
-  Future<QuoteModel> getRandomQuote();
+  Future<List<QuoteModel>> getRandomQuote(
+      @Header("X-Api-Key") String apiKey,
+      );
 }

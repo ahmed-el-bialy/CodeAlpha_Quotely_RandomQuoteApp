@@ -11,7 +11,9 @@ part of 'webservices.dart';
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations,unused_element_parameter,avoid_unused_constructor_parameters,unreachable_from_main,avoid_redundant_argument_values
 
 class _Webservices implements Webservices {
-  _Webservices(this._dio, {this.baseUrl, this.errorLogger});
+  _Webservices(this._dio, {this.baseUrl, this.errorLogger}) {
+    baseUrl ??= 'https://api.api-ninjas.com/v2/';
+  }
 
   final Dio _dio;
 
@@ -20,12 +22,13 @@ class _Webservices implements Webservices {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<QuoteModel> getRandomQuote() async {
+  Future<List<QuoteModel>> getRandomQuote(String apiKey) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'X-Api-Key': apiKey};
+    _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<QuoteModel>(
+    final _options = _setStreamType<List<QuoteModel>>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -35,10 +38,12 @@ class _Webservices implements Webservices {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late QuoteModel _value;
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<QuoteModel> _value;
     try {
-      _value = QuoteModel.fromJson(_result.data!);
+      _value = _result.data!
+          .map((dynamic i) => QuoteModel.fromJson(i as Map<String, dynamic>))
+          .toList();
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options, response: _result);
       rethrow;
