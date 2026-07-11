@@ -51,6 +51,8 @@ dependencies:
   shimmer: ^3.0.0
   # Easily configure any flutter application with global variables using a `.env` file.
   flutter_dotenv: ^6.0.1
+  # Flutter widgets that make it easy to implement the Bloc (Business Logic Component) design pattern.
+  flutter_bloc: ^9.1.1
 
 dev_dependencies:
   flutter_test:
