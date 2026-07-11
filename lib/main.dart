@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:quotely/core/constants/app_constants.dart';
 
 import 'core/routing/app_router.dart';
 
@@ -25,6 +26,7 @@ class Quotely extends StatelessWidget {
       builder: (_, child) {
         return MaterialApp(
           onGenerateRoute: appRouter.generateRoute,
+          initialRoute: AppConstants.homeScreen,
           debugShowCheckedModeBanner: false,
         );
       },
