@@ -33,7 +33,24 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.8
+  cupertino_icons: ^1.0.9
+  # networking .
+  dio: ^5.10.0
+  retrofit_generator: ^10.2.7
+  retrofit: ^4.9.2
+  pretty_dio_logger: ^1.4.0
+  # A flutter plugin for adapting screen and font size.Guaranteed to look good on different model.
+  flutter_screenutil: ^5.9.3
+  # Customize Flutter's default white native splash screen with background color and splash image.
+  flutter_native_splash: ^2.4.8
+  # A package which simplifies the task of updating your Flutter app's launcher icon.
+  flutter_launcher_icons: ^0.14.4
+  # Helps you to change or rename your flutter project BundleId and AppName for Ios, Android, macOS and Linux platforms
+  rename: ^3.1.0
+  # A package provides an easy way to add shimmer effect in Flutter project
+  shimmer: ^3.0.0
+  # Easily configure any flutter application with global variables using a `.env` file.
+  flutter_dotenv: ^6.0.1
 
 dev_dependencies:
   flutter_test:
@@ -45,6 +62,13 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^6.0.0
+
+  # Automatically generate code for converting to and from JSON by annotating Dart classes.
+  json_serializable: ^6.14.0
+
+  # A build system for Dart code generation and modular compilation.
+  build_runner: ^2.15.1
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
