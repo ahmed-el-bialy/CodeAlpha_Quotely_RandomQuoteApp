@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:quotely/core/helpers/spacing.dart';
 import 'package:quotely/core/theming/app_colors.dart';
 import 'package:quotely/features/home/logic/quote_state.dart';
 import 'package:shimmer/shimmer.dart';
@@ -48,9 +49,9 @@ class QuoteContent extends StatelessWidget {
                 fontWeight: FontWeight.w400,
               ),
             ),
-            SizedBox(height: 22.h),
+            verticalSpacing( 22),
             Container(width: 28.w, height: 2.h, color: AppColors.accent),
-            SizedBox(height: 18.h),
+            verticalSpacing( 18),
             Text(
               model.author,
               style: TextStyle(
