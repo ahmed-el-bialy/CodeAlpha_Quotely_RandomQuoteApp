@@ -304,8 +304,8 @@ flutter pub get
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/ahmed-el-bialy/CodeAlpha_Quotely_RandomQuoteApp.git
-cd CodeAlpha_Quotely_RandomQuoteApp
+git clone https://github.com/ahmed-el-bialy/Quotely.git
+cd Quotely
 
 # 2. Install dependencies
 flutter pub get
